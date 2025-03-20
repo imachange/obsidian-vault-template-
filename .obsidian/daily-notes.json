@@ -1,0 +1,5 @@
+{
+  "folder": "_Lifelog",
+  "format": "YYYY年/YYYY年MM月/YYYY年MM月DD日/YYYY年MM月DD日",
+  "template": "_System/Templater/Archetypes/TP_DAILY_NOTE"
+}

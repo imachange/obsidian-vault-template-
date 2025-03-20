@@ -3,7 +3,7 @@
   "ctrlKey": true,
   "altKey": false,
   "hideFolderNote": true,
-  "templatePath": "",
+  "templatePath": "_System/Templater/Archetypes/TP_FOLDER_NOTE.md",
   "autoCreate": false,
   "enableCollapsing": false,
   "excludeFolders": [],
@@ -44,7 +44,7 @@
   "useSubmenus": true,
   "syncMove": true,
   "frontMatterTitle": {
-    "enabled": false,
+    "enabled": true,
     "explorer": true,
     "path": true
   },
