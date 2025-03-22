@@ -1,0 +1,8 @@
+{
+  "taskFilePath": "_System/Silhouette/task.md",
+  "holidayFilePath": "_System/Silhouette/holiday.md",
+  "fileDateFormat": "YYYY年MM月DD日",
+  "timerStorageFilePath": "_System/Silhouette/timer.json",
+  "showTimeOnStatusBar": false,
+  "startNextTaskAutomaticallyAfterDone": false
+}
