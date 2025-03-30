@@ -13,6 +13,7 @@ params:
   FORMAT_DATETIME: YYYY年MM月DD日HH時mm分ss秒
   FORMAT_DATETIME_ISO: YYYY-MM-DD[T]HH:mm:ss
   DEFAULT_SHORT_TITLE: 一覧
+  FORMAT_DATE_DAYFULL: YYYY年MM月DD日(ddd)
 ---
 
 # 共通
@@ -45,6 +46,9 @@ params.shortTitleのデフォルト値。ヘッダーのパンくずリストで
 ### FORMAT_DATE_DAY
 `INPUT[text():params.FORMAT_DATE_DAY]`
 「日」の日本語表記フォーマット。moment記法で指定。
+
+### FORMAT_DATE_DAYFULL
+`INPUT[text():params.FORMAT_DATE_DAYFULL]`
 
 ### FORMAT_DATETIME
 `INPUT[text():params.FORMAT_DATETIME]`

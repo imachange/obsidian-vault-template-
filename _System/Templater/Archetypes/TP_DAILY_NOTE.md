@@ -23,6 +23,8 @@ const config = DataviewAPI.page(CONFIG_FILE_PATH).params;
  */
 const fileName = tp.file.title;
 
+const fileNameDiary = tp.date.now(config.FORMAT_DATE_DAYFULL, 0, fileName, config.FORMAT_DATE_DAY);
+
 const fileDate = tp.date.now(config.FORMAT_DATETIME_ISO, 0, fileName, config.FORMAT_DATE_DAY);
 
 const DAILY_NOTE_CONTEXT = `
@@ -33,30 +35,7 @@ await dv.view("_System/Dataview/DailyNoteContext");
 
 const DAILY_TASK_COMMAND_BUTTON = `
 \`\`\`dataviewjs {id="DailyTaskCommandButton" class="no-render"}
-function createCommandButton(label, commands) {
-    const button = dv.el("button", label);
-    button.onclick = function() {
-        commands.forEach(command => app.commands.executeCommandById(command));
-    };
-    return button;
-}
-const startButton = createCommandButton("開始", [
-    "obsidian-silhouette:move-to-recording",
-    "obsidian-silhouette:insert-current-time",
-    "obsidian-silhouette:push-timer"
-]);
-const measureButton = createCommandButton("計測", [
-    "obsidian-silhouette:move-to-recording",
-    "obsidian-silhouette:push-timer"
-]);
-const endButton = createCommandButton("終了", [
-    "obsidian-silhouette:move-to-recording",
-    "obsidian-silhouette:insert-current-time",
-    "obsidian-silhouette:cycle-bullet-checkbox"
-]);
-const forceStopButton = createCommandButton("強制終了", [
-    "obsidian-silhouette:force-stop-recording"
-]);
+await dv.view("_System/Dataview/DailyTaskControllButtons");
 \`\`\`
 `;
 
@@ -80,7 +59,7 @@ ${tp.file.cursor()}
 ${DAILY_TASK_COMMAND_BUTTON}
 
 ## 日記
-![[${fileName}()]]
+![[${fileNameDiary}]]
 `
 /**
  * 指定された時間だけ非同期で待機する関数
