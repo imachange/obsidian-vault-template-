@@ -25,6 +25,8 @@ const fileName = tp.file.title;
 
 const fileNameDiary = tp.date.now(config.FORMAT_DATE_DAYFULL, 0, fileName, config.FORMAT_DATE_DAY);
 
+const fileNameDay = tp.date.now(config.FORMAT_DATE_DAYSHORT, 0, fileName, config.FORMAT_DATE_DAY);
+
 const fileDate = tp.date.now(config.FORMAT_DATETIME_ISO, 0, fileName, config.FORMAT_DATE_DAY);
 
 const DAILY_NOTE_CONTEXT = `
@@ -35,7 +37,7 @@ await dv.view("_System/Dataview/DailyNoteContext");
 
 const DAILY_TASK_COMMAND_BUTTON = `
 \`\`\`dataviewjs {id="DailyTaskCommandButton" class="no-render"}
-await dv.view("_System/Dataview/DailyTaskControllButtons");
+await dv.view("_System/Dataview/DailyTaskDashboard");
 \`\`\`
 `;
 
@@ -48,6 +50,7 @@ params:
   type: daily
   created: ${tp.date.now(config.FORMAT_DATETIME_ISO)}
   updated: 
+  altTitle: ${fileNameDay}
   shortTitle: "日次"
 ${DELIMITER}`
 
